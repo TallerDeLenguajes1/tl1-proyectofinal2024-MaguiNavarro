@@ -1,8 +1,9 @@
 using System;
-using System.Collections.Generic;
+using System.Data;
 using System.Net.Http;
+using System.Text.Json;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
+
 
 class Servicio
 {
@@ -23,12 +24,12 @@ class Servicio
                 string responseBody = await response.Content.ReadAsStringAsync();
 
                 // Deserializar la respuesta JSON a una lista de objetos Character
-                List<Character> characters = JsonConvert.DeserializeObject<List<Character>>(responseBody);
+                List<Personajes> personajes = JsonConvert.DeserializeObject<List<Personajes>>(responseBody);
 
                 // Usar los objetos Character deserializados
-                foreach (var character in characters)
+                foreach (var personaje in personajes)
                 {
-                    Console.WriteLine($"Full Name: {character.FullName}\nTitle: {character.Title}\nFamily: {character.Family}\n");
+                    Console.WriteLine($"Full Name: {personaje.FullName}\nTitle: {personaje.Title}\nFamily: {character.Family}\n");
                 }
             }
             catch (HttpRequestException e)
