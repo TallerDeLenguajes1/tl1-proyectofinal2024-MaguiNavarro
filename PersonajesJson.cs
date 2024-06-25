@@ -40,4 +40,17 @@ public class PersonajesJson{
             return new List<Character>();
         }
     }
+
+    public static bool Existe(string nombreArchivo)
+    {
+        try
+        {
+            return File.Exists(nombreArchivo) && new FileInfo(nombreArchivo).Length > 0;
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error al verificar la existencia del archivo: {ex.Message}");
+            return false;
+        }
+    }
 }
