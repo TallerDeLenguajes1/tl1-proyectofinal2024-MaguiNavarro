@@ -1,0 +1,194 @@
+[
+  {
+    "id": 0,
+    "firstName": "Daenerys",
+    "lastName": "Targaryen",
+    "fullName": "Daenerys Targaryen",
+    "title": "Mother of Dragons",
+    "family": "House Targaryen",
+    "Fuerza1": 0,
+    "Nivel1": 0,
+    "Armadura1": 0,
+    "Salud1": 0,
+    "Destreza1": 0,
+    "Velocidad1": 0
+  },
+  {
+    "id": 1,
+    "firstName": "Samwell",
+    "lastName": "Tarly",
+    "fullName": "Samwell Tarly",
+    "title": "Maester",
+    "family": "House Tarly",
+    "Fuerza1": 0,
+    "Nivel1": 0,
+    "Armadura1": 0,
+    "Salud1": 0,
+    "Destreza1": 0,
+    "Velocidad1": 0
+  },
+
+
+  
+  {
+    "id": 7,
+    "firstName": "Robert",
+    "lastName": "Baratheon",
+    "fullName": "Robert Baratheon",
+    "title": "Lord of the Seven Kingdoms",
+    "family": "House Baratheon",
+    "Fuerza1": 0,
+    "Nivel1": 0,
+    "Armadura1": 0,
+    "Salud1": 0,
+    "Destreza1": 0,
+    "Velocidad1": 0
+  },
+
+  {
+    "id": 9,
+    "firstName": "Cersei",
+    "lastName": "Lannister",
+    "fullName": "Cersei Lannister",
+    "title": "Lady of Casterly Rock",
+    "family": "House Lannister",
+    "Fuerza1": 0,
+    "Nivel1": 0,
+    "Armadura1": 0,
+    "Salud1": 0,
+    "Destreza1": 0,
+    "Velocidad1": 0
+  },
+  
+ 
+  {
+    "id": 12,
+    "firstName": "Theon",
+    "lastName": "Greyjoy",
+    "fullName": "Theon Greyjoy",
+    "title": "Captain of Sea Bitch",
+    "family": "House Greyjoy",
+    "Fuerza1": 0,
+    "Nivel1": 0,
+    "Armadura1": 0,
+    "Salud1": 0,
+    "Destreza1": 0,
+    "Velocidad1": 0
+  },
+ 
+  {
+    "id": 14,
+    "firstName": "Tyrion",
+    "lastName": "Lannister",
+    "fullName": "Tyrion Lannister",
+    "title": "Hand of the Queen",
+    "family": "House Lanister",
+    "Fuerza1": 0,
+    "Nivel1": 0,
+    "Armadura1": 0,
+    "Salud1": 0,
+    "Destreza1": 0,
+    "Velocidad1": 0
+  },
+ 
+ 
+
+  {
+    "id": 18,
+    "firstName": "Stannis",
+    "lastName": "Baratheon",
+    "fullName": "Stannis Baratheon",
+    "title": "Lord of Dragonstone",
+    "family": "House Baratheon",
+    "Fuerza1": 0,
+    "Nivel1": 0,
+    "Armadura1": 0,
+    "Salud1": 0,
+    "Destreza1": 0,
+    "Velocidad1": 0
+  },
+ 
+  
+  {
+    "id": 21,
+    "firstName": "Margaery",
+    "lastName": "Tyrell",
+    "fullName": "Margaery Tyrell",
+    "title": "Queen of the Seven Kingdoms",
+    "family": "House Tyrell",
+    "Fuerza1": 0,
+    "Nivel1": 0,
+    "Armadura1": 0,
+    "Salud1": 0,
+    "Destreza1": 0,
+    "Velocidad1": 0
+  },
+
+  
+
+  {
+    "id": 33,
+    "firstName": "Jorah",
+    "lastName": "Mormont",
+    "fullName": "Jorah Mormont",
+    "title": "Knight",
+    "family": "Mormont",
+    "Fuerza1": 0,
+    "Nivel1": 0,
+    "Armadura1": 0,
+    "Salud1": 0,
+    "Destreza1": 0,
+    "Velocidad1": 0
+  },
+  {
+    "id": 34,
+    "firstName": "Robert",
+    "lastName": "Baratheon",
+    "fullName": "Robert Baratheon",
+    "title": "King",
+    "family": "Baratheon",
+    "Fuerza1": 0,
+    "Nivel1": 0,
+    "Armadura1": 0,
+    "Salud1": 0,
+    "Destreza1": 0,
+    "Velocidad1": 0
+  },
+  {
+    "id": 35,
+    "firstName": "Ramsey",
+    "lastName": "Bolton",
+    "fullName": "Ramsey Bolton",
+    "title": "The Bastard of Bolton",
+    "family": "Bolton",
+    "Fuerza1": 0,
+    "Nivel1": 0,
+    "Armadura1": 0,
+    "Salud1": 0,
+    "Destreza1": 0,
+    "Velocidad1": 0
+  },
+
+
+  
+
+ 
+
+  {
+    "id": 45,
+    "firstName": "Yara",
+    "lastName": "Greyjoy",
+    "fullName": "Yara Greyjoy",
+    "title": "Lady of the Iron Islands",
+    "family": "Greyjoy",
+    "Fuerza1": 0,
+    "Nivel1": 0,
+    "Armadura1": 0,
+    "Salud1": 0,
+    "Destreza1": 0,
+    "Velocidad1": 0
+  }
+
+
+
+]

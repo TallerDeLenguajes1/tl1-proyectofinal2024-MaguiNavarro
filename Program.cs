@@ -1,36 +1,50 @@
 ﻿using System.Text.Json.Serialization;
+using System;
 using PersonajeApi;
 using ServicioApi;
+using System.Text.Json;
 
 class Program
 {
-  static void Main(string[] args)
+  static async Task Main(string[] args)
     {
-       
-          // Crear una instancia de la fábrica de personajes
-        FabricaDePersonajes fabrica = new FabricaDePersonajes();
+        // URL de la API que deseas consumir
+        string apiUrl = "https://thronesapi.com/api/v2/Characters";
 
         // Mostrar el menú y capturar la elección del usuario
         string familiaElegida = MostrarMenuYCapturarEleccion();
 
-        // Crear un personaje aleatorio basado en la elección del usuario
-        Character personajeAleatorio = fabrica.CrearPersonajeAleatorio(familiaElegida);
+        // Obtener personajes de la familia seleccionada desde la API utilizando ApiService
+        List<Character> personajesDeFamilia = await ApiService.ObtenerPersonajesPorFamilia(apiUrl, familiaElegida);
+
+        // Verificar si hay personajes disponibles en la familia seleccionada
+        if (personajesDeFamilia.Count == 0)
+        {
+            Console.WriteLine($"No se encontraron personajes de la familia {familiaElegida}.");
+            return;
+        }
+
+        // Seleccionar un personaje aleatorio de la familia seleccionada
+        Random random = new Random();
+        Character personajeAleatorio = personajesDeFamilia[random.Next(personajesDeFamilia.Count)];
 
         // Mostrar los datos del personaje creado
         MostrarDatosPersonaje(personajeAleatorio);
-       
-        // Guardar personajes en un archivo JSON
-        string nombreArchivo = "personajes.json";
-        PersonajesJson.GuardarPersonajes(new List<Character> { personajeAleatorio }, nombreArchivo);
 
-        // Verificar si el archivo existe y tiene datos
-        bool existe = PersonajesJson.Existe(nombreArchivo);
-        Console.WriteLine($"El archivo {nombreArchivo} existe y tiene datos: {existe}");
+        // Guardar el personaje aleatorio en un archivo JSON
+        string nombreArchivoAleatorio = "personaje_aleatorio.json";
+        PersonajesJson.GuardarPersonajes(new List<Character> { personajeAleatorio }, nombreArchivoAleatorio);
 
-        // Leer personajes desde el archivo JSON
-        List<Character> personajesLeidos = PersonajesJson.LeerPersonajes(nombreArchivo);
-        Console.WriteLine($"Se leyeron {personajesLeidos.Count} personajes del archivo {nombreArchivo}");
+        // Verificar si el archivo del personaje aleatorio existe y tiene datos
+        bool existeAleatorio = PersonajesJson.Existe(nombreArchivoAleatorio);
+        Console.WriteLine($"El archivo {nombreArchivoAleatorio} existe y tiene datos: {existeAleatorio}");
+
+        // Leer el personaje aleatorio desde el archivo JSON
+        List<Character> personajeAleatorioLeido = PersonajesJson.LeerPersonajes(nombreArchivoAleatorio);
+        Console.WriteLine($"Se leyó el personaje del archivo {nombreArchivoAleatorio}");
     }
+    
+
     static string MostrarMenuYCapturarEleccion()
     {
         Console.WriteLine("Seleccione la casa a la que le gustaría pertenecer:");
