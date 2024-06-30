@@ -8,25 +8,15 @@ class Program
 {
   static async Task Main(string[] args)
     {
-        // URL de la API que deseas consumir
-        string apiUrl = "https://thronesapi.com/api/v2/Characters";
+        MostrarPresentacion();
+        // Crear una instancia de la fábrica de personajes
+        FabricaDePersonajes fabrica = new FabricaDePersonajes();
 
         // Mostrar el menú y capturar la elección del usuario
         string familiaElegida = MostrarMenuYCapturarEleccion();
 
-        // Obtener personajes de la familia seleccionada desde la API utilizando ApiService
-        List<Character> personajesDeFamilia = await ApiService.ObtenerPersonajesPorFamilia(apiUrl, familiaElegida);
-
-        // Verificar si hay personajes disponibles en la familia seleccionada
-        if (personajesDeFamilia.Count == 0)
-        {
-            Console.WriteLine($"No se encontraron personajes de la familia {familiaElegida}.");
-            return;
-        }
-
-        // Seleccionar un personaje aleatorio de la familia seleccionada
-        Random random = new Random();
-        Character personajeAleatorio = personajesDeFamilia[random.Next(personajesDeFamilia.Count)];
+        // Crear un personaje aleatorio basado en la elección del usuario
+        Character personajeAleatorio = fabrica.CrearPersonajeAleatorio(familiaElegida);
 
         // Mostrar los datos del personaje creado
         MostrarDatosPersonaje(personajeAleatorio);
@@ -42,11 +32,47 @@ class Program
         // Leer el personaje aleatorio desde el archivo JSON
         List<Character> personajeAleatorioLeido = PersonajesJson.LeerPersonajes(nombreArchivoAleatorio);
         Console.WriteLine($"Se leyó el personaje del archivo {nombreArchivoAleatorio}");
+
+        // URL de la API que deseas consumir
+        string apiUrl = "https://thronesapi.com/api/v2/Characters";
+
+        // Obtener personajes desde la API utilizando ApiService
+        List<Character> personajes = await ApiService.ObtenerPersonajesDesdeAPI(apiUrl);
+
+        // Guardar personajes en un archivo JSON
+        string nombreArchivo = "personajes.json";
+        PersonajesJson.GuardarPersonajes(personajes, nombreArchivo);
+
+        // Verificar si el archivo existe y tiene datos
+        bool existe = PersonajesJson.Existe(nombreArchivo);
+        Console.WriteLine($"El archivo {nombreArchivo} existe y tiene datos: {existe}");
+
+        // Leer personajes desde el archivo JSON
+        List<Character> personajesLeidos = PersonajesJson.LeerPersonajes(nombreArchivo);
+        Console.WriteLine($"Se leyeron {personajesLeidos.Count} personajes del archivo {nombreArchivo}");
     }
-    
+    static void MostrarPresentacion()
+    {
+        string rutaArchivo = "Presentacion.txt";
+        if (File.Exists(rutaArchivo))
+        {
+            string presentacion = File.ReadAllText(rutaArchivo);
+            // Cambiar el color del texto a un solo color para todo el contenido
+            Console.ForegroundColor = ConsoleColor.Cyan; // Elige el color que prefieras
+            Console.WriteLine(presentacion);
+            // Restablecer el color de la consola al color predeterminado
+            Console.ResetColor();
+        }
+        else
+        {
+            Console.WriteLine("Archivo de presentación no encontrado.");
+        }
+    }
+   
 
     static string MostrarMenuYCapturarEleccion()
-    {
+    {   Console.WriteLine("Bienvenido al juego de personajes de Juego de Tronos.");
+    
         Console.WriteLine("Seleccione la casa a la que le gustaría pertenecer:");
         Console.WriteLine("1. Stark");
         Console.WriteLine("2. Targaryen");
@@ -67,6 +93,9 @@ class Program
 
         return familia;
     }
+    
+
+  
 
     static void MostrarDatosPersonaje(Character personaje)
     {

@@ -27,11 +27,6 @@ public class ApiService
             }
         }
     }
-       public static async Task<List<Character>> ObtenerPersonajesPorFamilia(string apiUrl, string familia)
-    {
-        List<Character> todosLosPersonajes = await ObtenerPersonajesDesdeAPI(apiUrl);
-        List<Character> personajesDeFamilia = todosLosPersonajes.FindAll(p => p.Family.Equals(familia, StringComparison.OrdinalIgnoreCase));
-        return personajesDeFamilia;
-    }
+
   }
 }

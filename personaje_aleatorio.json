@@ -1,16 +1,16 @@
 [
   {
-    "id": 36,
-    "firstName": "Talisa",
-    "lastName": "Stark",
-    "fullName": "Talisa Stark",
-    "title": "Queen Consort",
-    "family": "Stark",
-    "Fuerza1": 0,
-    "Nivel1": 0,
-    "Armadura1": 0,
-    "Salud1": 0,
-    "Destreza1": 0,
-    "Velocidad1": 0
+    "id": 0,
+    "firstName": "Tyrion",
+    "lastName": null,
+    "fullName": null,
+    "title": null,
+    "family": "Targaryen",
+    "Fuerza1": 4,
+    "Nivel1": 6,
+    "Armadura1": 3,
+    "Salud1": 100,
+    "Destreza1": 3,
+    "Velocidad1": 9
   }
 ]
