@@ -3,9 +3,9 @@ using System;
 using System.IO;
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using PersonajeApi;
 
-namespace ServicioApi { 
+
+namespace Api { 
 public class ApiService
 {
     public static async Task<List<Character>> ObtenerPersonajesDesdeAPI(string apiUrl)

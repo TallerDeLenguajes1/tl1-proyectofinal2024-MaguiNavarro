@@ -1,8 +1,11 @@
 using System;
-using PersonajeApi;
+
 // FabricaDePersonajes.cs
 using System;
 using System.Collections.Generic;
+namespace Api
+{
+    
 
 public class FabricaDePersonajes
 {
@@ -31,4 +34,5 @@ public class FabricaDePersonajes
             Salud1 = 100
         };
     }
+}
 }
