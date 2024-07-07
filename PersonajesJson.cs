@@ -2,7 +2,7 @@ using System.Text.Json.Serialization;
 using System;
 using System.Text.Json;
 using System.IO;
-using PersonajeApi;
+using Api;
 
 public class PersonajesJson{
      public static void GuardarPersonajes(List<Character> personajes, string nombreArchivo)
