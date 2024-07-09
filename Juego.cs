@@ -2,6 +2,7 @@ using System.Text.Json.Serialization;
 using System;
 using System.Text.Json;
 using Api;
+using JuegoP;
 using Historial;
 
 
@@ -17,6 +18,12 @@ class Juego
 
         // Obtener personajes desde la API utilizando ApiService
         List<Character> personajes = await ApiService.ObtenerPersonajesDesdeAPI(apiUrl);
+         // Verificar si se obtuvieron personajes
+        if (personajes == null || personajes.Count == 0)
+        {
+            Console.WriteLine("No se pudieron obtener personajes de la API. Saliendo del juego.");
+            return;
+        }
 
         // Guardar personajes en un archivo JSON
         string nombreArchivo = "personajes.json";
@@ -31,7 +38,7 @@ class Juego
         Console.WriteLine($"Se leyeron {personajesLeidos.Count} personajes del archivo {nombreArchivo}");
 
         // Inicializar y comenzar el juego
-        JuegoP.JuegoPrincipal juego = new JuegoP.JuegoPrincipal(personajesLeidos);
+        JuegoP.JuegoPrincipal juego = new(personajesLeidos);
         juego.IniciarJuego();
     }
 

@@ -1,6 +1,4 @@
-using System;
 
-// FabricaDePersonajes.cs
 using System;
 using System.Collections.Generic;
 namespace Api

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using  Api;
+
 namespace JuegoP
 {
     
@@ -28,10 +29,25 @@ namespace JuegoP
         string familiaElegida = MostrarMenuYCapturarEleccion();
 
         // Seleccionar personaje basado en la casa elegida
-        jugador = SeleccionarPersonaje(familiaElegida);
-        oponente = SeleccionarPersonajeAleatorio(); // Selecciona un oponente aleatorio
+        jugador = CrearPersonajeAleatorio();
+        if (jugador == null)
+            { 
+                Console.WriteLine($"No se encontraron personajes para la familia {familiaElegida}. Saliendo del juego.");
+                return;
+            }
 
-        MostrarDatosPersonaje(jugador);
+            // Seleccionar un oponente aleatorio
+            oponente = SeleccionarPersonajeAleatorio();
+            if (oponente == null)
+            {
+                Console.WriteLine("No se pudo seleccionar un oponente. Saliendo del juego.");
+                return;
+            }
+
+            MostrarDatosPersonaje(jugador);
+
+       
+
 
         while (turnosRestantes > 0 && jugador.Salud1 > 0 && oponente.Salud1 > 0)
         {
@@ -50,26 +66,32 @@ namespace JuegoP
 
             Console.WriteLine("\nPresiona cualquier tecla para continuar al siguiente turno...");
             Console.ReadKey();
-            Console.Clear();
+       
 
             turnosRestantes--;
         }
 
         Console.WriteLine("\nFin del juego.");
     }
-
-       private Character SeleccionarPersonaje(string familia)
+   public static Character CrearPersonajeAleatorio()
         {
-            List<Character> personajesFamilia = personajes.FindAll(p => p.Family == familia);
-            if (personajesFamilia.Count == 0)
-            {
-                return null;
-            }
-            int indiceAleatorio = random.Next(personajesFamilia.Count);
-            return personajesFamilia[indiceAleatorio];
+            // Aquí utilizamos la fábrica de personajes para crear un personaje aleatorio
+            FabricaDePersonajes fabrica = new();
+            string familiaElegida = MostrarMenuYCapturarEleccion(); // Puedes implementar tu propia lógica para elegir la familia
+            return fabrica.CrearPersonajeAleatorio(familiaElegida);
         }
+    //    public Character SeleccionarPersonaje(string familia)
+        // {
+        //     List<Character> personajesFamilia = personajes.FindAll(p => p.Family == familia);
+        //     if (personajesFamilia.Count == 0)
+        //     {
+        //         return null;
+        //     }
+        //     int indiceAleatorio = random.Next(personajesFamilia.Count);
+        //     return personajesFamilia[indiceAleatorio];
+        // }
 
-    private Character SeleccionarPersonajeAleatorio()
+    public Character SeleccionarPersonajeAleatorio()
     {
         int indiceAleatorio = random.Next(personajes.Count);
         return personajes[indiceAleatorio];
@@ -85,7 +107,7 @@ namespace JuegoP
 
         string decision = Console.ReadLine();
 
-        // Simplemente simular la toma de decisión, no se implementa la lógica completa para cada opción
+    
         Console.WriteLine($"Has elegido la opción {decision}.");
     }
 
@@ -94,6 +116,7 @@ namespace JuegoP
         // Generar un evento aleatorio y mostrarlo al jugador
         string[] eventos = {
             "Un aliado poderoso se une a tu causa.",
+            "Un ataque sorpresa por una de las casas Enemigas",
             "Una disputa interna debilita tus recursos.",
             "Recibes un mensaje enigmático de un rival.",
             "Una plaga afecta a tus tierras, disminuyendo tus recursos."
@@ -113,7 +136,10 @@ namespace JuegoP
         int constanteAjuste = 500;
 
         int danioProvocado = ((ataque * efectividad) - defensa) / constanteAjuste;
-        if (danioProvocado < 0) danioProvocado = 0;
+
+        if (danioProvocado < 0) {
+            danioProvocado = 0;
+         }
 
         defensor.Salud1 -= danioProvocado;
 
