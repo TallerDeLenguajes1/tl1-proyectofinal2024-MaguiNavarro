@@ -29,7 +29,7 @@ public class FabricaDePersonajes
             Fuerza1 = Random.Next(1, 11),
             Nivel1 = Random.Next(1, 11),
             Armadura1 = Random.Next(1, 11),
-            Salud1 = 100
+           
         };
     }
 }

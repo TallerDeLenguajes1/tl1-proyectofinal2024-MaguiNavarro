@@ -32,7 +32,7 @@ namespace Api
         public int Fuerza1 { get => Fuerza; set => Fuerza = value; }
         public int Nivel1 { get => Nivel; set => Nivel = value; }
         public int Armadura1 { get => Armadura; set => Armadura = value; }
-        public int Salud1 { get => Salud; set => Salud = 100; }
+        public int Salud1 { get => Salud; set => Salud = value; }
         public int Destreza1 { get => Destreza; set => Destreza = value; }
         public int Velocidad1 { get => Velocidad; set => Velocidad = value; }
 

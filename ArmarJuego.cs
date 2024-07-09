@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Runtime;
 using  Api;
 
 namespace JuegoP
@@ -19,6 +20,7 @@ namespace JuegoP
         this.personajes = personajes;
         random = new Random();
         turnosRestantes = 5; // Defino que se necesitan 5 turnos consecutivos para ganar
+       
     }
 
     public void IniciarJuego()
@@ -35,7 +37,7 @@ namespace JuegoP
                 Console.WriteLine($"No se encontraron personajes para la familia {familiaElegida}. Saliendo del juego.");
                 return;
             }
-
+           jugador.Salud1=100;
             // Seleccionar un oponente aleatorio
             oponente = SeleccionarPersonajeAleatorio();
             if (oponente == null)
@@ -43,7 +45,7 @@ namespace JuegoP
                 Console.WriteLine("No se pudo seleccionar un oponente. Saliendo del juego.");
                 return;
             }
-
+            oponente.Salud1= 100;
             MostrarDatosPersonaje(jugador);
 
        
@@ -129,17 +131,16 @@ namespace JuegoP
     }
 
     private void RealizarAtaque(Character atacante, Character defensor)
-    {
+    {   
+     
         int ataque = atacante.Destreza1 * atacante.Fuerza1 * atacante.Nivel1;
-        int efectividad = random.Next(1, 101);
+        int efectividad = random.Next(30, 101);
         int defensa = defensor.Armadura1 * defensor.Velocidad1;
         int constanteAjuste = 500;
 
         int danioProvocado = ((ataque * efectividad) - defensa) / constanteAjuste;
 
-        if (danioProvocado < 0) {
-            danioProvocado = 0;
-         }
+       
 
         defensor.Salud1 -= danioProvocado;
 
