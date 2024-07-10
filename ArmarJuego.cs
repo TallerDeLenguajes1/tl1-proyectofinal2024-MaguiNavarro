@@ -28,10 +28,10 @@ namespace JuegoP
         Console.WriteLine("Bienvenido al juego del Trono de Hierro.");
 
         // Mostrar menú para seleccionar la casa
-        string familiaElegida = MostrarMenuYCapturarEleccion();
+         string familiaElegida = MostrarMenuYCapturarEleccion();
 
         // Seleccionar personaje basado en la casa elegida
-        jugador = CrearPersonajeAleatorio();
+        jugador = CrearPersonajeAleatorio(familiaElegida);
         if (jugador == null)
             { 
                 Console.WriteLine($"No se encontraron personajes para la familia {familiaElegida}. Saliendo del juego.");
@@ -39,7 +39,7 @@ namespace JuegoP
             }
            jugador.Salud1=100;
             // Seleccionar un oponente aleatorio
-            oponente = SeleccionarPersonajeAleatorio();
+            oponente = CrearPersonajeAleatorio(familiaElegida);
             if (oponente == null)
             {
                 Console.WriteLine("No se pudo seleccionar un oponente. Saliendo del juego.");
@@ -60,7 +60,7 @@ namespace JuegoP
             RealizarAtaque(jugador, oponente);
 
             // Verificar si se ha alcanzado el objetivo de ganar
-            if (turnosRestantes == 0)
+            if (turnosRestantes == 0 || oponente.Salud1 <= 0)
             {
                 Console.WriteLine("\n¡Felicidades! Has mantenido el Trono de Hierro durante cinco turnos consecutivos. ¡Has ganado el juego!");
                 break;
@@ -75,12 +75,11 @@ namespace JuegoP
 
         Console.WriteLine("\nFin del juego.");
     }
-   public static Character CrearPersonajeAleatorio()
+   public static Character CrearPersonajeAleatorio(string familia)
         {
             // Aquí utilizamos la fábrica de personajes para crear un personaje aleatorio
-            FabricaDePersonajes fabrica = new();
-            string familiaElegida = MostrarMenuYCapturarEleccion(); // Puedes implementar tu propia lógica para elegir la familia
-            return fabrica.CrearPersonajeAleatorio(familiaElegida);
+            FabricaDePersonajes fabrica = new();  
+            return fabrica.CrearPersonajeAleatorio(familia);
         }
     //    public Character SeleccionarPersonaje(string familia)
         // {
@@ -134,9 +133,9 @@ namespace JuegoP
     {   
      
         int ataque = atacante.Destreza1 * atacante.Fuerza1 * atacante.Nivel1;
-        int efectividad = random.Next(30, 101);
+        int efectividad = random.Next(30, 100);
         int defensa = defensor.Armadura1 * defensor.Velocidad1;
-        int constanteAjuste = 500;
+        int constanteAjuste = 50;
 
         int danioProvocado = ((ataque * efectividad) - defensa) / constanteAjuste;
 
@@ -151,6 +150,8 @@ namespace JuegoP
         if (defensor.Salud1 <= 0)
         {
             Console.WriteLine($"\n{defensor.FirstName} ha sido derrotado.");
+              Console.WriteLine("FELICIDADES GANASTE EL TRONO DE HIERRO!.");
+
         }
     }
 
