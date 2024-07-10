@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Runtime;
 using  Api;
+using Historial;
 
 namespace JuegoP
 {
@@ -63,7 +64,10 @@ namespace JuegoP
             if (turnosRestantes == 0 || oponente.Salud1 <= 0)
             {
                 Console.WriteLine("\n¡Felicidades! Has mantenido el Trono de Hierro durante cinco turnos consecutivos. ¡Has ganado el juego!");
+                  RegistrarGanador(jugador);
+           
                 break;
+
             }
 
             Console.WriteLine("\nPresiona cualquier tecla para continuar al siguiente turno...");
@@ -75,6 +79,13 @@ namespace JuegoP
 
         Console.WriteLine("\nFin del juego.");
     }
+        private void RegistrarGanador(Character ganador)
+        {
+            string nombreArchivo = "historial.json";
+            List<Character> historial = HistorialJson.Existe(nombreArchivo) ? HistorialJson.LeerDatos<List<Character>>(nombreArchivo) : new List<Character>();
+            historial.Add(ganador);
+            HistorialJson.GuardarDatos(historial, nombreArchivo);
+        }
    public static Character CrearPersonajeAleatorio(string familia)
         {
             // Aquí utilizamos la fábrica de personajes para crear un personaje aleatorio

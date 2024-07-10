@@ -1,16 +1,16 @@
 [
   {
     "id": 0,
-    "firstName": "Theon",
+    "firstName": "Jon",
     "lastName": null,
     "fullName": null,
     "title": null,
     "family": "Targaryen",
-    "Fuerza1": 5,
-    "Nivel1": 1,
-    "Armadura1": 4,
+    "Fuerza1": 7,
+    "Nivel1": 4,
+    "Armadura1": 2,
     "Salud1": 100,
-    "Destreza1": 4,
+    "Destreza1": 2,
     "Velocidad1": 7
   }
 ]
