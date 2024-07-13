@@ -73,12 +73,44 @@ namespace JuegoP
             Console.WriteLine("\nPresiona cualquier tecla para continuar al siguiente turno...");
             Console.ReadKey();
        
-
             turnosRestantes--;
         }
 
         Console.WriteLine("\nFin del juego.");
+
+   
     }
+
+       //Funciones de Bienvenida
+         public static void MostrarBienvenida()
+        {
+            string bienvenida = "Bienvenido al Juego de Tronos.\n" +
+                                "El juego se sitúa en el continente de Westeros, en el periodo inmediatamente posterior a la muerte de un rey. " +
+                                "El Trono de Hierro está vacante y varios pretendientes de diferentes casas nobiliarias luchan por reclamarlo.";
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine(bienvenida);
+            Console.ResetColor();
+        }
+
+        public static void MostrarMenuInicial()
+        {
+            string menu = "  # ------------------------------- #\n" +
+                          "  |  # - #                  # - #   |\n" +
+                          "  |         MENU PRINCIPAL          |\n" +
+                          "  |                                 |\n" +
+                          "  |       1. Nueva Partida          |\n" +
+                          "  |                                 |\n" +
+                          "  |       2. Salir                  |\n" +
+                          "  |                                 |\n" +
+                          "  |  # - #                  # - #   |\n" +
+                          "  # ------------------------------- #\n" +
+                          "            Elija una opción:         ";
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine(menu);
+            Console.ResetColor();
+        }
+
+      //funcion que crea el ARchivo para registrar el ganador
         private void RegistrarGanador(Character ganador)
         {
             string nombreArchivo = "historial.json";
@@ -92,16 +124,7 @@ namespace JuegoP
             FabricaDePersonajes fabrica = new();  
             return fabrica.CrearPersonajeAleatorio(familia);
         }
-    //    public Character SeleccionarPersonaje(string familia)
-        // {
-        //     List<Character> personajesFamilia = personajes.FindAll(p => p.Family == familia);
-        //     if (personajesFamilia.Count == 0)
-        //     {
-        //         return null;
-        //     }
-        //     int indiceAleatorio = random.Next(personajesFamilia.Count);
-        //     return personajesFamilia[indiceAleatorio];
-        // }
+
 
     public Character SeleccionarPersonajeAleatorio()
     {

@@ -12,5 +12,19 @@
     "Salud1": 100,
     "Destreza1": 2,
     "Velocidad1": 7
+  },
+  {
+    "id": 0,
+    "firstName": "Daenerys",
+    "lastName": null,
+    "fullName": null,
+    "title": null,
+    "family": "Targaryen",
+    "Fuerza1": 3,
+    "Nivel1": 2,
+    "Armadura1": 6,
+    "Salud1": 100,
+    "Destreza1": 3,
+    "Velocidad1": 3
   }
 ]
