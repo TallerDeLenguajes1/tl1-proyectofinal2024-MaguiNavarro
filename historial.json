@@ -26,5 +26,47 @@
     "Salud1": 100,
     "Destreza1": 3,
     "Velocidad1": 3
+  },
+  {
+    "id": 0,
+    "firstName": "Jon",
+    "lastName": null,
+    "fullName": null,
+    "title": null,
+    "family": "Targaryen",
+    "Fuerza1": 6,
+    "Nivel1": 10,
+    "Armadura1": 6,
+    "Salud1": 100,
+    "Destreza1": 2,
+    "Velocidad1": 5
+  },
+  {
+    "id": 0,
+    "firstName": "Theon",
+    "lastName": null,
+    "fullName": null,
+    "title": null,
+    "family": "Targaryen",
+    "Fuerza1": 7,
+    "Nivel1": 10,
+    "Armadura1": 6,
+    "Salud1": 100,
+    "Destreza1": 4,
+    "Velocidad1": 3
+  },
+  {
+    "id": 0,
+    "firstName": "Jon",
+    "lastName": null,
+    "fullName": null,
+    "title": null,
+    "family": "Targaryen",
+    "Fuerza1": 8,
+    "Nivel1": 3,
+    "Armadura1": 10,
+    "Salud1": 100,
+    "Destreza1": 2,
+    "Velocidad1": 3
   }
 ]

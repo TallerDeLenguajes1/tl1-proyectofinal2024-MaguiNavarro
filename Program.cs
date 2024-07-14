@@ -51,8 +51,9 @@ public class Program
                     juego.IniciarJuego();
                 }
                 else if (eleccion == "2")
-                {
-                    Console.WriteLine("Gracias por jugar. ¡Hasta la próxima!");
+                {    
+                      Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                    Console.WriteLine("GRACIAS POR JUGAR. ¡HASTA LA PROXIMA!");
                     break;
                 }
                 else

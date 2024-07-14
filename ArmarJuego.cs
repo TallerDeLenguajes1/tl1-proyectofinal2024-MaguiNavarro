@@ -42,7 +42,7 @@ namespace JuegoP
             // Seleccionar un oponente aleatorio
             oponente = CrearPersonajeAleatorio(familiaElegida);
             if (oponente == null)
-            {
+            {     Console.ForegroundColor = ConsoleColor.DarkYellow;
                 Console.WriteLine("No se pudo seleccionar un oponente. Saliendo del juego.");
                 return;
             }
@@ -54,6 +54,7 @@ namespace JuegoP
 
         while (turnosRestantes > 0 && jugador.Salud1 > 0 && oponente.Salud1 > 0)
         {
+              Console.ForegroundColor = ConsoleColor.DarkYellow;
             Console.WriteLine($"\nTurnos restantes para ganar: {turnosRestantes}");
 
             TomarDecision();
@@ -62,20 +63,23 @@ namespace JuegoP
 
             // Verificar si se ha alcanzado el objetivo de ganar
             if (turnosRestantes == 0 || oponente.Salud1 <= 0)
-            {
-                Console.WriteLine("\n¡Felicidades! Has mantenido el Trono de Hierro durante cinco turnos consecutivos. ¡Has ganado el juego!");
+            {    
+                Console.ForegroundColor = ConsoleColor.Magenta;
+                Console.WriteLine("\n¡FELICIDADES, HAS GANADO EL JUEGO!");
+               Console.WriteLine("Has mantenido el Trono de Hierro durante cinco turnos consecutivos." ) ;
+               MostrarAsciiGanador("TronoAscii.txt");
                   RegistrarGanador(jugador);
            
                 break;
 
             }
-
+              Console.ForegroundColor = ConsoleColor.DarkGreen;
             Console.WriteLine("\nPresiona cualquier tecla para continuar al siguiente turno...");
             Console.ReadKey();
        
             turnosRestantes--;
         }
-
+          Console.ForegroundColor = ConsoleColor.DarkYellow;
         Console.WriteLine("\nFin del juego.");
 
    
@@ -84,12 +88,24 @@ namespace JuegoP
        //Funciones de Bienvenida
          public static void MostrarBienvenida()
         {
+  
             string bienvenida = "Bienvenido al Juego de Tronos.\n" +
-                                "El juego se sitúa en el continente de Westeros, en el periodo inmediatamente posterior a la muerte de un rey. " +
-                                "El Trono de Hierro está vacante y varios pretendientes de diferentes casas nobiliarias luchan por reclamarlo.";
-            Console.ForegroundColor = ConsoleColor.Yellow;
+                                "El juego se sitúa en el continente de Westeros, en el periodo inmediatamente posterior a la muerte de un rey.\n " +
+                                "El Trono de Hierro está vacante y varios pretendientes de diferentes casas nobiliarias luchan por reclamarlo.\n";
+            Console.ForegroundColor = ConsoleColor.Magenta;
+             MostrarTextoLento(bienvenida, 50);
             Console.WriteLine(bienvenida);
+           
             Console.ResetColor();
+        }
+          public static void MostrarTextoLento(string texto, int delay)
+        {
+            foreach (char c in texto)
+            {
+                Console.Write(c);
+                Thread.Sleep(delay);
+            }
+            Console.WriteLine(); // Agrega una nueva línea al final del texto
         }
 
         public static void MostrarMenuInicial()
@@ -109,7 +125,8 @@ namespace JuegoP
             Console.WriteLine(menu);
             Console.ResetColor();
         }
-
+     
+     
       //funcion que crea el ARchivo para registrar el ganador
         private void RegistrarGanador(Character ganador)
         {
@@ -134,6 +151,7 @@ namespace JuegoP
 
     private void TomarDecision()
     {
+          Console.ForegroundColor = ConsoleColor.DarkMagenta;
         Console.WriteLine("\nEs tu turno. ¿Qué decisión tomarás?");
         Console.WriteLine("1. Formar alianza");
         Console.WriteLine("2. Movimiento militar");
@@ -142,7 +160,7 @@ namespace JuegoP
 
         string decision = Console.ReadLine();
 
-    
+          Console.ForegroundColor = ConsoleColor.DarkYellow;
         Console.WriteLine($"Has elegido la opción {decision}.");
     }
 
@@ -159,7 +177,7 @@ namespace JuegoP
 
         int indiceEvento = random.Next(eventos.Length);
         string eventoAleatorio = eventos[indiceEvento];
-
+           Console.ForegroundColor = ConsoleColor.DarkGreen;
         Console.WriteLine($"\nEvento aleatorio: {eventoAleatorio}");
     }
 
@@ -176,30 +194,65 @@ namespace JuegoP
        
 
         defensor.Salud1 -= danioProvocado;
-
+          Console.ForegroundColor = ConsoleColor.DarkMagenta;
         Console.WriteLine($"\n{atacante.FirstName} ataca a {defensor.FirstName}");
         Console.WriteLine($"Daño provocado: {danioProvocado}");
         Console.WriteLine($"{defensor.FirstName} tiene {defensor.Salud1} de salud restante");
 
         if (defensor.Salud1 <= 0)
-        {
+        {      Console.ForegroundColor = ConsoleColor.Magenta;
             Console.WriteLine($"\n{defensor.FirstName} ha sido derrotado.");
               Console.WriteLine("FELICIDADES GANASTE EL TRONO DE HIERRO!.");
 
         }
     }
 
-    private static string MostrarMenuYCapturarEleccion()
-    {
-        Console.WriteLine("Bienvenido al juego de personajes de Juego de Tronos.");
+    // private static string MostrarMenuYCapturarEleccion()
+    // {
+    //     Console.WriteLine("Bienvenido al juego de personajes de Juego de Tronos.");
         
+    //     Console.WriteLine("Seleccione la casa a la que le gustaría pertenecer:");
+    //     Console.WriteLine("1. Stark");
+    //     Console.WriteLine("2. Targaryen");
+    //     Console.WriteLine("3. Lannister");
+    //     Console.WriteLine("4. Baratheon");
+    //     Console.WriteLine("5. Greyjoy");
+
+    //     string eleccion = Console.ReadLine();
+    //     string familia = eleccion switch
+    //     {
+    //         "1" => "Stark",
+    //         "2" => "Targaryen",
+    //         "3" => "Lannister",
+    //         "4" => "Baratheon",
+    //         "5" => "Greyjoy",
+    //         _ => "Stark" // Valor predeterminado
+    //     };
+
+    //     return familia;
+    // }
+   private static string MostrarMenuYCapturarEleccion()
+    {
+  
+        // Mostrar título del menú
+            Console.ForegroundColor = ConsoleColor.DarkMagenta;
+        Console.WriteLine("**************************************");
+        Console.WriteLine("*   Juego de Tronos - Selección de Casa   *");
+        Console.WriteLine("**************************************\n");
+
+        // Mostrar las opciones del menú
+        Console.ForegroundColor = ConsoleColor.Yellow;
         Console.WriteLine("Seleccione la casa a la que le gustaría pertenecer:");
+        Console.ForegroundColor = ConsoleColor.Cyan;
         Console.WriteLine("1. Stark");
         Console.WriteLine("2. Targaryen");
         Console.WriteLine("3. Lannister");
         Console.WriteLine("4. Baratheon");
         Console.WriteLine("5. Greyjoy");
 
+        // Capturar la elección del usuario
+        Console.ForegroundColor = ConsoleColor.White;
+        Console.Write("\nIngrese su elección (1-5): ");
         string eleccion = Console.ReadLine();
         string familia = eleccion switch
         {
@@ -208,12 +261,10 @@ namespace JuegoP
             "3" => "Lannister",
             "4" => "Baratheon",
             "5" => "Greyjoy",
-            _ => "Stark" // Valor predeterminado
-        };
-
-        return familia;
-    }
-
+            _ => "Stark", // Valor predeterminado
+             };
+             return familia;
+        }
  
    public static void MostrarDatosPersonaje(Character personaje)
         {
@@ -232,5 +283,21 @@ namespace JuegoP
             Console.WriteLine($"Armadura: {personaje.Armadura1}");
             Console.WriteLine($"Salud: {personaje.Salud1}");
         }
+         private static void  MostrarAsciiGanador(string rutaArchivo)
+        {
+            if (File.Exists(rutaArchivo))
+            {
+                string asciiArte = File.ReadAllText(rutaArchivo);
+                Console.ForegroundColor = ConsoleColor.Magenta;
+                Console.WriteLine(asciiArte);
+                Console.ResetColor();
+            }
+            else
+            {
+                Console.WriteLine("Archivo de arte ASCII no encontrado.");
+            }
+        }
    }
+    
+   
 }
