@@ -288,7 +288,7 @@ namespace JuegoP
             if (File.Exists(rutaArchivo))
             {
                 string asciiArte = File.ReadAllText(rutaArchivo);
-                Console.ForegroundColor = ConsoleColor.Magenta;
+                Console.ForegroundColor = ConsoleColor.Cyan;
                 Console.WriteLine(asciiArte);
                 Console.ResetColor();
             }

@@ -68,5 +68,33 @@
     "Salud1": 100,
     "Destreza1": 2,
     "Velocidad1": 3
+  },
+  {
+    "id": 0,
+    "firstName": "Theon",
+    "lastName": null,
+    "fullName": null,
+    "title": null,
+    "family": "Baratheon",
+    "Fuerza1": 5,
+    "Nivel1": 6,
+    "Armadura1": 7,
+    "Salud1": 100,
+    "Destreza1": 2,
+    "Velocidad1": 9
+  },
+  {
+    "id": 0,
+    "firstName": "Tyrion",
+    "lastName": null,
+    "fullName": null,
+    "title": null,
+    "family": "Targaryen",
+    "Fuerza1": 8,
+    "Nivel1": 10,
+    "Armadura1": 3,
+    "Salud1": 100,
+    "Destreza1": 2,
+    "Velocidad1": 8
   }
 ]
