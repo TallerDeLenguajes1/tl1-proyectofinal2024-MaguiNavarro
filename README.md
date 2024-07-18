@@ -7,29 +7,49 @@
 
 
 ## Personajes de las 7 Casas
-**-Casa Targaryen**
-**- Casa Stark**
-**- Casa Lannister**
-**- Casa Baratheon**
-**- Casa Greyjoy**
-**- Casa Velaryon**
-**- Casa Bolton**
+* Casa Targaryen
+* Casa Stark
+* Casa Lannister
+* Casa Baratheon
+* Casa Greyjoy
+* Casa Velaryon
+* Casa Bolton
 
 ## Cómo Jugar
-**1-Selección de Casa: Elige una casa para jugar (Stark, Lannister, Baratheon, Targaryen, Greyjoy, Velaryon, Bolton)**
+1. Selección de Casa: Elige una casa para jugar (Stark, Lannister, Baratheon, Targaryen, Greyjoy, Velaryon, Bolton)
+2. Turnos: Cada turno, toma una decisión sobre cómo proceder (formar alianza, movimiento militar, gestión de recursos, intriga).
+3. Eventos Aleatorios: Después de cada decisión, un evento aleatorio ocurrirá, afectando tus recursos
+4. Objetivo: Mantén el Trono de Hierro durante cinco turnos consecutivos para ganar.
 
-**2-Turnos: Cada turno, toma una decisión sobre cómo proceder (formar alianza, movimiento militar, gestión de recursos, intriga).**
+## Mecánicas del Juego
+### Sistema de Turnos
+**El juego progresa en turnos, donde cada jugador tiene la oportunidad de realizar acciones como:**
 
-**3-Eventos Aleatorios: Después de cada decisión, un evento aleatorio ocurrirá, afectando tus recursos**
+* Movimientos militares
+* Negociaciones y alianzas
+* Tramas y conspiraciones
+* Gestión de recursos (alimentos, dinero, tropas)
+### Recursos
+*  Oro: Necesario para financiar ejércitos y sobornar aliados.
+*  Tropas: Necesarias para la defensa y conquista.
+*  Influencia: Afecta las alianzas y decisiones políticas.
+*  Decisiones del Jugador
+*  Alianzas: Formar o romper alianzas con otras casas.
+*  Movimientos Militares: Decidir dónde enviar las tropas (defender, atacar, reforzar).
+*  Gestión de Recursos: Decidir cómo gastar el oro y la influencia.
+*  Intriga: Planificar traiciones o defensas contra conspiraciones.
 ### Eventos Aleatorios
-**-Una traición inesperada**
-**-La llegada de refuerzos**
-**-Un ataque sorpresa**
-**-Un descubrimiento de secretos**
-**-Una epidemia en las tropas**
-
-**4-Objetivo: Mantén el Trono de Hierro durante cinco turnos consecutivos para ganar.**
-
+* Una traición inesperada
+* La llegada de refuerzos
+* Un ataque sorpresa
+* Un descubrimiento de secretos
+* Una epidemia en las tropas
+### Pérdida del Trono de Hierro
+* Derrota en Batalla: Ser derrotado en combate por otros contendientes.
+* Deslealtades y Traiciones: Perder el apoyo de aliados clave debido a traiciones o decisiones impopulares.
+* Revuelta Popular: Sufrir una rebelión interna debido a una mala administración o a la tiranía.
+* Intriga y Asesinatos: Ser víctima de conspiraciones, envenenamientos o asesinatos planeados por otros jugadores o  NPCs.
+**¡Prepárate para sumergirte en el mundo de Westeros, donde solo el más astuto y fuerte puede reclamar el Trono de Hierro!**
 ## Recursos Utilizados
-API de Personajes: Thrones API
-Generador de Arte ASCII: ASCII Art Generator
+**API de Personajes:** [Api](https://thronesapi.com/api/v2/Characters)
+**Generador de Arte ASCII:** [ ASCII Art Generator](https://www.ascii-art-generator.org/)
