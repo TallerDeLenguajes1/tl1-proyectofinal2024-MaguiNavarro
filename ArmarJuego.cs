@@ -207,30 +207,7 @@ namespace JuegoP
         }
     }
 
-    // private static string MostrarMenuYCapturarEleccion()
-    // {
-    //     Console.WriteLine("Bienvenido al juego de personajes de Juego de Tronos.");
-        
-    //     Console.WriteLine("Seleccione la casa a la que le gustaría pertenecer:");
-    //     Console.WriteLine("1. Stark");
-    //     Console.WriteLine("2. Targaryen");
-    //     Console.WriteLine("3. Lannister");
-    //     Console.WriteLine("4. Baratheon");
-    //     Console.WriteLine("5. Greyjoy");
-
-    //     string eleccion = Console.ReadLine();
-    //     string familia = eleccion switch
-    //     {
-    //         "1" => "Stark",
-    //         "2" => "Targaryen",
-    //         "3" => "Lannister",
-    //         "4" => "Baratheon",
-    //         "5" => "Greyjoy",
-    //         _ => "Stark" // Valor predeterminado
-    //     };
-
-    //     return familia;
-    // }
+ 
    private static string MostrarMenuYCapturarEleccion()
     {
   
