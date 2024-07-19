@@ -59,9 +59,9 @@
 3. Clonar el repositorio actual desde una terminal de VisualStudioCode o desde la Bash de Git con el siguiente comando:
 
 
-git clone (https://github.com/TallerDeLenguajes1/tl1-proyectofinal2024-MaguiNavarro.git)
+            git clone (https://github.com/TallerDeLenguajes1/tl1-proyectofinal2024-MaguiNavarro.git)
 
 *De esta forma se descargará todo el juego en una carpeta con el nombre tl1-proyectofinal2024-MaguiNavarro*
 *Luego debe abrir dicha carpeta con VisualStudioCode, abrir una nueva terminal y ejecutar el siguiente comando:*
                             
-                             **dotnet run**
+                             dotnet run
