@@ -20,20 +20,14 @@ public class Program
 
                 if (eleccion == "1")
                 {
-                    MostrarPresentacion();
+                  JuegoPrincipal.MostrarPresentacion();
                     // URL de la API que deseas consumir
                     string apiUrl = "https://thronesapi.com/api/v2/Characters";
 
                     // Obtener personajes desde la API
                     List<Character> personajes = await ApiService.ObtenerPersonajesDesdeAPI(apiUrl);
 
-                    // Verificar si se obtuvieron personajes
-                    if (personajes == null || personajes.Count == 0)
-                    {
-                        Console.WriteLine("No se pudieron obtener personajes de la API. Saliendo del juego.");
-                        return;
-                    }
-
+                
                     // Guardar personajes en un archivo JSON
                     string nombreArchivo = "personajes.json";
                     PersonajesJson.GuardarPersonajes(personajes, nombreArchivo);
@@ -65,21 +59,7 @@ public class Program
 
     
  
-    static void MostrarPresentacion()
-    {
-        string rutaArchivo = "Presentacion.txt";
-        if (File.Exists(rutaArchivo))
-        {
-            string presentacion = File.ReadAllText(rutaArchivo);
-            Console.ForegroundColor = ConsoleColor.Cyan; // Color de presentación
-            Console.WriteLine(presentacion);
-            Console.ResetColor();
-        }
-        else
-        {
-            Console.WriteLine("Archivo de presentación no encontrado.");
-        }
-    }
+ 
  
  }
  

@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Runtime;
 using  Api;
 using Historial;
 
@@ -94,10 +93,24 @@ namespace JuegoP
                                 "El Trono de Hierro está vacante y varios pretendientes de diferentes casas nobiliarias luchan por reclamarlo.\n";
             Console.ForegroundColor = ConsoleColor.Magenta;
              MostrarTextoLento(bienvenida, 50);
-            Console.WriteLine(bienvenida);
-           
+        
             Console.ResetColor();
         }
+        public static void MostrarPresentacion()
+    {
+        string rutaArchivo = "Presentacion.txt";
+        if (File.Exists(rutaArchivo))
+        {
+            string presentacion = File.ReadAllText(rutaArchivo);
+            Console.ForegroundColor = ConsoleColor.Cyan; // Color de presentación
+            Console.WriteLine(presentacion);
+            Console.ResetColor();
+        }
+        else
+        {
+            Console.WriteLine("Archivo de presentación no encontrado.");
+        }
+    }
           public static void MostrarTextoLento(string texto, int delay)
         {
             foreach (char c in texto)
