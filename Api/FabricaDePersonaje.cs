@@ -1,6 +1,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Text.Json;
 namespace Api
 {
     
@@ -8,7 +9,9 @@ namespace Api
 public class FabricaDePersonajes
 {
    
-    private static readonly List<string> Nombres = new List<string> { "Jon", "Daenerys", "Tyrion", "Arya", "Theon" };
+
+        
+      private static readonly List<string> Nombres = new List<string> { "Jon", "Daenerys", "Tyrion", "Arya", "Theon","Cersei" };
       private static readonly Random Random = new Random();
 
     public Character CrearPersonajeAleatorio(string familia)
@@ -33,3 +36,11 @@ public class FabricaDePersonajes
     }
 }
 }
+
+
+     
+
+      
+    
+
+ 

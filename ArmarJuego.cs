@@ -64,7 +64,6 @@ namespace JuegoP
             if (turnosRestantes == 0 || oponente.Salud1 <= 0)
             {    
                 Console.ForegroundColor = ConsoleColor.Magenta;
-                Console.WriteLine("\n¡FELICIDADES, HAS GANADO EL JUEGO!");
                Console.WriteLine("Has mantenido el Trono de Hierro durante cinco turnos consecutivos." ) ;
                MostrarAsciiGanador("TronoAscii.txt");
                   RegistrarGanador(jugador);
