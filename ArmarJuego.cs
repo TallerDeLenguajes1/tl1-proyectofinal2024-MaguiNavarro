@@ -269,9 +269,9 @@ namespace JuegoP
             Console.WriteLine($"Velocidad: {personaje.Velocidad1}");
             Console.WriteLine($"Destreza: {personaje.Destreza1}");
             Console.WriteLine($"Fuerza: {personaje.Fuerza1}");
-            Console.WriteLine($"Nivel: {personaje.Nivel1}");
+            Console.WriteLine($"Nivel de defensa: {personaje.Nivel1}");
             Console.WriteLine($"Armadura: {personaje.Armadura1}");
-            Console.WriteLine($"Salud: {personaje.Salud1}");
+            Console.WriteLine($"Salud: {personaje.Salud1}%");
         }
          private static void  MostrarAsciiGanador(string rutaArchivo)
         {
