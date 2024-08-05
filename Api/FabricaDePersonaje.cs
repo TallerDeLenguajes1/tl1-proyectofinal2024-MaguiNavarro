@@ -7,14 +7,13 @@ namespace Api
 
 public class FabricaDePersonajes
 {
-    private static readonly List<string> Tipos = new List<string> { "Guerrero", "Mago", "Arquero", "Asesino" };
+   
     private static readonly List<string> Nombres = new List<string> { "Jon", "Daenerys", "Tyrion", "Arya", "Theon" };
-    private static readonly List<string> Familias = new List<string> { "Stark", "Targaryen", "Lannister", "Baratheon", "Greyjoy" };
-    private static readonly Random Random = new Random();
+      private static readonly Random Random = new Random();
 
     public Character CrearPersonajeAleatorio(string familia)
     {
-        var tipo = Tipos[Random.Next(Tipos.Count)];
+     
         var nombre = Nombres[Random.Next(Nombres.Count)];
       
      
