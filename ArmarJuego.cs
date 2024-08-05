@@ -224,13 +224,13 @@ namespace JuegoP
    private static string MostrarMenuYCapturarEleccion()
     {
   
-        // Mostrar título del menú
+       
             Console.ForegroundColor = ConsoleColor.DarkMagenta;
         Console.WriteLine("**************************************");
         Console.WriteLine("*   Juego de Tronos - Selección de Casa   *");
         Console.WriteLine("**************************************\n");
 
-        // Mostrar las opciones del menú
+   
         Console.ForegroundColor = ConsoleColor.Yellow;
         Console.WriteLine("Seleccione la casa a la que le gustaría pertenecer:");
         Console.ForegroundColor = ConsoleColor.Cyan;
