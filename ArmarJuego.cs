@@ -206,7 +206,7 @@ namespace JuegoP
         }
     }
 
-    Console.ForegroundColor = ConsoleColor.Green; // Mostrar el color en verde para indicar que se ha seleccionado una opción correcta
+    Console.ForegroundColor = ConsoleColor.Green; 
     Console.WriteLine("Continuando con el juego...");
     Console.ResetColor(); 
     }
