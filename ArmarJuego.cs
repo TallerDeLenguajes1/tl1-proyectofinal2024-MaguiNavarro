@@ -163,17 +163,52 @@ namespace JuegoP
 
     private void TomarDecision()
     {
-          Console.ForegroundColor = ConsoleColor.DarkMagenta;
+        string decision;
+    while (true)
+    {
         Console.WriteLine("\nEs tu turno. ¿Qué decisión tomarás?");
         Console.WriteLine("1. Formar alianza");
         Console.WriteLine("2. Movimiento militar");
         Console.WriteLine("3. Gestión de recursos");
         Console.WriteLine("4. Intriga");
 
-        string decision = Console.ReadLine();
+        decision = Console.ReadLine();
 
-          Console.ForegroundColor = ConsoleColor.DarkYellow;
-        Console.WriteLine($"Has elegido la opción {decision}.");
+        if (decision == "1")
+        {
+            Console.WriteLine("Has elegido formar una alianza.");
+          
+            break; 
+        }
+        else if (decision == "2")
+        {
+            Console.WriteLine("Has elegido realizar un movimiento militar.");
+         
+            break; 
+        }
+        else if (decision == "3")
+        {
+            Console.WriteLine("Has elegido gestionar los recursos.");
+           
+            break; 
+        }
+        else if (decision == "4")
+        {
+            Console.WriteLine("Has elegido involucrarte en intrigas.");
+           
+            break; 
+        }
+        else
+        {
+            Console.ForegroundColor = ConsoleColor.Red; 
+            Console.WriteLine("Opción no válida. Por favor, elige una opción del 1 al 4.");
+            Console.ResetColor(); 
+        }
+    }
+
+    Console.ForegroundColor = ConsoleColor.Green; // Mostrar el color en verde para indicar que se ha seleccionado una opción correcta
+    Console.WriteLine("Continuando con el juego...");
+    Console.ResetColor(); 
     }
 
     private void EjecutarEventoAleatorio()
