@@ -11,7 +11,7 @@ public class FabricaDePersonajes
    
 
         
-      private static readonly List<string> Nombres = new List<string> { "Jon", "Daenerys", "Tyrion", "Arya", "Theon","Cersei" };
+      private static readonly List<string> Nombres = new List<string> { "Jon", "Daenerys", "Tyrion", "Arya", "Theon","Cersei","Samwell","Sansa","Joffrey","Davos","Margaery", "Daario"};
       private static readonly Random Random = new Random();
 
     public Character CrearPersonajeAleatorio(string familia)
