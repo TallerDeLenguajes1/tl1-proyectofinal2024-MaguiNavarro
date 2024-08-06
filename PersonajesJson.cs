@@ -19,7 +19,6 @@ public class PersonajesJson{
             Console.WriteLine($"Error al guardar personajes: {ex.Message}");
         }
     }
-
     public static List<Character> LeerPersonajes(string nombreArchivo)
     {
         try

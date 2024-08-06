@@ -96,19 +96,6 @@
     "Salud1": 100,
     "Destreza1": 2,
     "Velocidad1": 4
-  },
-  {
-    "id": 0,
-    "firstName": "Theon",
-    "lastName": null,
-    "fullName": null,
-    "title": null,
-    "family": "Lannister",
-    "Fuerza1": 7,
-    "Nivel1": 9,
-    "Armadura1": 3,
-    "Salud1": 100,
-    "Destreza1": 4,
-    "Velocidad1": 2
   }
+
 ]

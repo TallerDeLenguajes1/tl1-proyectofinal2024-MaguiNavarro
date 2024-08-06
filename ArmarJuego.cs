@@ -197,7 +197,7 @@ namespace JuegoP
     {   
      
         int ataque = atacante.Destreza1 * atacante.Fuerza1 * atacante.Nivel1;
-        int efectividad = random.Next(30, 100);
+        int efectividad = random.Next(20, 100);
         int defensa = defensor.Armadura1 * defensor.Velocidad1;
         int constanteAjuste = 50;
 
