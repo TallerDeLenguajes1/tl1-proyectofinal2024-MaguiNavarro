@@ -127,8 +127,8 @@ namespace JuegoP
                           "  |         MENU PRINCIPAL          |\n" +
                           "  |                                 |\n" +
                           "  |       1. Nueva Partida          |\n" +
-                          "  |                                 |\n" +
-                          "  |       2. Salir                  |\n" +
+                          "  |       2-Mostrar Ganadores       |\n" +
+                          "  |       3. Salir                  |\n" +
                           "  |                                 |\n" +
                           "  |  # - #                  # - #   |\n" +
                           "  # ------------------------------- #\n" +
@@ -199,7 +199,7 @@ namespace JuegoP
         int ataque = atacante.Destreza1 * atacante.Fuerza1 * atacante.Nivel1;
         int efectividad = random.Next(20, 100);
         int defensa = defensor.Armadura1 * defensor.Velocidad1;
-        int constanteAjuste = 50;
+        int constanteAjuste = 100;
 
         int danioProvocado = ((ataque * efectividad) - defensa) / constanteAjuste;
 

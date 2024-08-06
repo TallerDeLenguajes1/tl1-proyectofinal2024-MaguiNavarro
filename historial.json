@@ -96,6 +96,47 @@
     "Salud1": 100,
     "Destreza1": 2,
     "Velocidad1": 4
+  },
+  {
+    "id": 0,
+    "firstName": "Davos",
+    "lastName": null,
+    "fullName": null,
+    "title": null,
+    "family": "Baratheon",
+    "Fuerza1": 4,
+    "Nivel1": 9,
+    "Armadura1": 1,
+    "Salud1": 100,
+    "Destreza1": 5,
+    "Velocidad1": 9
+  },
+  {
+    "id": 0,
+    "firstName": "Daenerys",
+    "lastName": null,
+    "fullName": null,
+    "title": null,
+    "family": "Targaryen",
+    "Fuerza1": 10,
+    "Nivel1": 7,
+    "Armadura1": 6,
+    "Salud1": 100,
+    "Destreza1": 3,
+    "Velocidad1": 8
+  },
+  {
+    "id": 0,
+    "firstName": "Daario",
+    "lastName": null,
+    "fullName": null,
+    "title": null,
+    "family": "Targaryen",
+    "Fuerza1": 5,
+    "Nivel1": 4,
+    "Armadura1": 8,
+    "Salud1": 100,
+    "Destreza1": 3,
+    "Velocidad1": 9
   }
-
 ]

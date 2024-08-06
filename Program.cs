@@ -42,12 +42,16 @@ public class Program
                     JuegoPrincipal juego = new JuegoPrincipal(personajesLeidos);
                     juego.IniciarJuego();
                 }
-                else if (eleccion == "2")
+                else if (eleccion == "3")
                 {    
                       Console.ForegroundColor = ConsoleColor.DarkMagenta;
                     Console.WriteLine("GRACIAS POR JUGAR. ¡HASTA LA PROXIMA!");
                     break;
+                }else if (eleccion == "2")
+                {
+                  HistorialDeGanadores.MostrarHistorial();   
                 }
+                
                 else
                 {
                     Console.WriteLine("Opción no válida. Por favor, elige una opción válida.");
