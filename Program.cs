@@ -8,8 +8,6 @@ public class Program
      static async Task Main(string[] args)
     {
         // Mostrar la presentación
-    
-    
         
         JuegoPrincipal.MostrarBienvenida();
 
